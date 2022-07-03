@@ -12,14 +12,20 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   if (playerSelection === computerSelection) {
-    return "It's a tie";
+    console.log("It's a tie");
+    return 0;
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
-    return `You win! ${playerSelection} beats ${computerSelection}`;
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+    return 1;
   } else if (playerSelection == "paper" && computerSelection == "rock") {
-    return `You win! ${playerSelection} beats ${computerSelection}`;
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+    return 1;
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
-    return `You win! ${playerSelection} beats ${computerSelection}`;
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+    return 1;
   } else {
-    return `You lose. ${computerSelection} beats ${playerSelection}`;
+    console.log(`You lose. ${computerSelection} beats ${playerSelection}`);
+    return 2;
   }
 }
+console.log(playRound("ROck", computerPlay()));
