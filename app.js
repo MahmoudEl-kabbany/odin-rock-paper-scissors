@@ -28,4 +28,26 @@ function playRound(playerSelection, computerSelection) {
     return 2;
   }
 }
-console.log(playRound("ROck", computerPlay()));
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+  let winnerIndicator = -1;
+  let playerChoice = "";
+  for (let i = 0; i < 5; i++) {
+    playerChoice = prompt("Choose rock paper or scissors");
+    winnerIndicator = playRound(playerChoice, computerPlay());
+    if (winnerIndicator == 2) {
+      computerScore += 1;
+    } else if (winnerIndicator == 1) {
+      playerScore += 1;
+    }
+  }
+  if (playerScore > computerScore) {
+    console.log("You win the game");
+  } else if (computerScore > playerScore) {
+    console.log("You lose the game");
+  } else {
+    console.log("The game is a tie");
+  }
+}
