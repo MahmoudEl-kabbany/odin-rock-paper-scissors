@@ -35,7 +35,7 @@ function playRound(e) {
       scores[0] = scores[0] + 1;
     } else {
       scoreMessage.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
-      scores[1] = scores[0] + 1;
+      scores[1] = scores[1] + 1;
     }
     // adjusts score counter
     scoreCounter.textContent = `${scores[0]}  :  ${scores[1]}`;
